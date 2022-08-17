@@ -1,2 +1,2 @@
-Handle . properly
-Change help text to have description
+Implement switches for arguments (switching between EU and Global modes)
+Lookup locale for default
