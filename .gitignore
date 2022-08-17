@@ -1,2 +1,4 @@
 .stack-work/
+src/Lib.hi
+src/Lib.o
 *~
