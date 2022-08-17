@@ -1,0 +1,2 @@
+Handle . properly
+Change help text to have description
