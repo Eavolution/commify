@@ -1,2 +1,4 @@
 Implement switches for arguments (switching between EU and Global modes)
+Print pretty arguments
+Add working export list in ArgParse
 Lookup locale for default

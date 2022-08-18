@@ -3,9 +3,11 @@ module Lib (
             commaGl
            ) where
 
+-- Use '.' as thousand seperator and ',' as decimal point. European.
 commaEU :: String -> String
 commaEU = comma ',' '.'
 
+-- Use ',' as thousand seperator and '.' as decimal point. Global.
 commaGl :: String -> String
 commaGl = comma '.' ','
 
