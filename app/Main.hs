@@ -12,10 +12,19 @@ swGl = Switch "-g" "--global"   "Formats the numbers US/UK style ie. '1,000.00'.
 definedSwitches :: [Switch]
 definedSwitches = [swHelp, swEu, swGl]
 
+comma :: [Switch] -> String -> String
+comma switches
+    | swEu `elem` switches = commaEu
+    | swGl `elem` switches = commaGl
+    | otherwise = commaGl
+
 main :: IO ()
 main = do
-    -- Get args and figure out how many there are
     cliArgs <- getArgs
+    let args = argsect definedSwitches [] cliArgs
+    let numbers = aPositionals args
+    let switches = aSwitches args
 
-
-    print $ argsect definedSwitches [] cliArgs
+    -- Sort out args
+    if swHelp `elem` switches || (UndefinedSwitch "") `elem` switches then 
+        getDefaultHelpText switches [] 

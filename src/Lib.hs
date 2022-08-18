@@ -1,11 +1,11 @@
 module Lib (
-            commaEU,
+            commaEu,
             commaGl
            ) where
 
 -- Use '.' as thousand seperator and ',' as decimal point. European.
-commaEU :: String -> String
-commaEU = comma ',' '.'
+commaEu :: String -> String
+commaEu = comma ',' '.'
 
 -- Use ',' as thousand seperator and '.' as decimal point. Global.
 commaGl :: String -> String
