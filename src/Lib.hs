@@ -1,6 +1,7 @@
 module Lib (
             commaEu,
-            commaGl
+            commaGl,
+            splitAtFirst
            ) where
 
 -- Use '.' as thousand seperator and ',' as decimal point. European.
@@ -15,10 +16,11 @@ splitAtFirst :: Eq a => a -> [a] -> ([a], [a])
 splitAtFirst x = fmap (drop 1) . break (x ==)
 
 comma :: Char -> Char -> String -> String
-comma decimal com string = (commaNoDots com $ fst strings) ++ (decimal : snd strings)
-    where 
-        strings :: (String, String)
-        strings = splitAtFirst decimal string
+comma decimal com string = ""
+--    if decimal `elem` string then
+--        (commaNoDots com $ fst $ splitAtFirst decimal string) ++ (decimal : snd $ splitAtFirst decimal string)
+ --   else
+ --       commaNoDots com string
 
 
 commaNoDots :: Char -> String -> String
