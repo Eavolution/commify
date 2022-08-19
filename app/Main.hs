@@ -48,12 +48,10 @@ main = do
             output :: [Switch] -> [DataSwitch] -> [PosArg] -> String -> String -> String
             output sws dsws nums oProgName oUsage
                 -- Display the help menu on -h
-                | swHelp `elem` sws =
-                    defaultHelpText
-                        definedSwitches definedDataSwitches oProgName oUsage
+                | swHelp `elem` sws = helpText
                 -- Require one number unless help was specified, obviously
                 | length nums /= 1 = "1 positional argument required, " ++
-                    show (length nums) ++ "given."
+                    show (length nums) ++ " \n" ++ helpText
                 -- If the europe switch is present, format number EU style if number is valid
                 | swEu `elem` sws =
                     fromMaybe errorMsg (commaEu num)
@@ -71,4 +69,6 @@ main = do
                         where
                             num = head nums
                             errorMsg = "Invalid number given: " ++ num
+                            helpText = defaultHelpText
+                                definedSwitches definedDataSwitches oProgName oUsage
                             customData = fromJust $ getDataFromDswList (dswIdShort swCustom) dsws
