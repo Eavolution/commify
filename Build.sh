@@ -44,10 +44,9 @@ function main {
                     ;;
             esac
         done
-        else
-            stack install
-            mv ./build/commify-exe ./build/commify
     fi
+    stack install
+    mv ./build/commify-exe ./build/commify
 }
 
 main
