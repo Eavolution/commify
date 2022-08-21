@@ -12,6 +12,10 @@ Stopped adding commas after the decimal point as is convention
 ## 0.1.1.0 - 2022 - 08 - 17
 Initial release
 
-## 0.1.2.0 - 2022 - 08 -19
+## 0.1.2.0 - 2022 - 08 - 19
 Added support for custom seperators and added switches for different locations
+
+## 0.1.3.0 - 2022 - 08 - 21
+Will now take number from command line if not specified to support pipes.
+Will now copy the executable to ./build
 

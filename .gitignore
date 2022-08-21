@@ -3,4 +3,5 @@ src/Lib.hi
 src/Lib.o
 dist-newstyle/
 TODO.txt
+build/
 *~

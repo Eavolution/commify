@@ -6,11 +6,20 @@ Puts commas in numbers to sepereate thousands to help readability. Reads number 
 This, and the argument parser it uses, are heavily work in progress as I'm learning Haskell.
 
 ## How to build
+
+### Automatically
+
+Recursively clone the repo (as it relies on a submodule).
+
+Run the `Build.sh` bash script.
+
+### Manually
+
 If you don't have stack installed go to https://docs.haskellstack.org/en/stable/README/ for instructions.
 
-Recursively clone the repo (as it relies on a submodule), then run `stack build` in the commify directory.
+Recursively clone the repo (as it relies on a submodule), then run `stack install` in the commify directory.
 
-Stack will build the executable, the output will display where it built the executable to. Move or copy this executable to somewhere in the `$PATH` to use as a command line tool.
+Stack will build the executable and copy it into the `./build` directory. Copy the executable to somewhere on the `$PATH` to use it as a command line tool.
 
 ## Usage
 Run `commify -h` after building to view the help text.

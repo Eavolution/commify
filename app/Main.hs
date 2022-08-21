@@ -6,6 +6,8 @@ import Argsect
 import System.Environment
 import Data.Maybe
 
+-- [[DEFINITIONS]]
+
 swHelp :: Switch
 swHelp =
     Switch
@@ -55,6 +57,8 @@ usageDescription :: String
 usageDescription = "number [optional switches]\nNumbers must have only 0-9 \
         \and optionally only decimal character of the region\
         \(',' for europe, '.' globally)"
+
+-- [[END DEFINITIONS]]
 
 -- Chooses which function to call based on if a number was provided or not
 handleSwitches :: Maybe PosArg 
@@ -113,7 +117,6 @@ main :: IO ()
 main = do
     cliArgs <- getArgs
     progName <- getProgName
-
     let parsed = argsect definedSwitches definedDataSwitches cliArgs
     
     (either
@@ -121,10 +124,10 @@ main = do
         (\ x ->
             handleSwitches
             (head' (aPositionals x))
-        (aSwitches x)
-        (aDataSwitches x)
-        progName
-        usageDescription)
+            (aSwitches x)
+            (aDataSwitches x)
+            progName
+            usageDescription)
         parsed)
         >>= putStrLn
     where
