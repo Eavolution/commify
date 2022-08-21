@@ -1,3 +1,4 @@
 Lookup locale for default
 Add setup script
 Set stack build directory
+Make more pure
